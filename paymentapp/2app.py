@@ -146,23 +146,7 @@ def check_balance(accounts):
         st.error("Invalid card number or PIN!")
 
 
-def add_bg_from_local(image):
-    with open(image, "rb") as image:
-        encoded_string = base64.b64encode(image.read())
-    st.markdown(
-        f"""
-    <style>
-    .stApp {{
-        background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
-        background-size: cover
-    }}
-    </style>
-    """,
-        unsafe_allow_html=True
-    )
 
-
-add_bg_from_local("image/bgimg.jpg")
 
 
 def main():
